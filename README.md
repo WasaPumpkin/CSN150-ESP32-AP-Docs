@@ -71,3 +71,6 @@ This project was awesome — like giving my ESP32 superpowers to make its own Wi
 ## 📸 Proof of Concept
 ![Simulation Screenshot](image.png)
 A Documentation Template for projects you complete in CSN150 (I filled it with my ESP32 AP story!)
+
+## 🎥 Video Demonstration
+[Click here to watch the Project Video](CSN-150%20FINAL%20PROJECT.mkv)
