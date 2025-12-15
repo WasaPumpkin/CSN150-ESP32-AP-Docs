@@ -1,62 +1,19 @@
-# CSN150-ESP32-AP-Docs[README.md](https://github.com/user-attachments/files/23638483/README.md)
-# Cybersecurity : CSN150
+# ESP32 WiFi Authentication Frame Detector (Simulation)
 
-Project: ESP32 Access Point Web Server
+## 📌 Project Overview
+This project is a cybersecurity simulation tool designed to detect **Authentication Flood Attacks** (a type of Denial of Service) on WiFi networks. Using an ESP32 and MicroPython, the system simulates "sniffing" WiFi management frames. If it detects a high volume of Authentication Frames (Packet ID `0xB0`) in a short period, it triggers a visual alarm (LED) to warn of the attack.
 
-## Purpose
+## 🧰 Equipment & Resources
+- **Simulator:** [Wokwi.com](https://wokwi.com) (Browser-based ESP32 simulator)
+- **Language:** MicroPython (Used to bypass build server limitations)
+- **Hardware (Simulated):** ESP32 DevKit V1, Red LED, 220Ω Resistor
 
-I made my ESP32-CAM act like a fake WiFi hotspot (Access Point) with a secret web page you can visit. It's like turning your toy robot into a mini internet cafe! Followed the guide from Random Nerd Tutorials to learn how WiFi works behind the scenes. No real internet — just local tricks for school.
+## ⚙️ Steps I Followed
 
-## Equipment
-
-- None! I used Wokwi.com (free online ESP32 simulator) because I don't have a physical ESP32-CAM yet. Super safe and easy!
-
-## Links to documentation and tools
-
-##### Video 1:
-- Wokwi Project (live demo): [Paste your Wokwi link here, like https://wokwi.com/projects/123456789]
-- Main Guide: https://randomnerdtutorials.com/esp32-cam-access-point-ap-web-server/
-
-##### Other Links:
-- Arduino IDE (if you want to try real code): https://www.arduino.cc/en/software
-- Wokwi ESP32 Start: https://wokwi.com/projects/new/esp32
-
-##### AI GPTs used
-- Grok (that's me! Built by xAI) — helped me paste code and fix steps like a robot buddy.
-
-## Steps I followed
-
-1. Opened Wokwi.com and clicked "Start from Scratch" > picked ESP32 (close enough to ESP32-CAM for sim).
-2. Deleted the default code in sketch.ino.
-3. Copied the Access Point code from the Random Nerd Tutorials guide (tweaked for no camera since Wokwi doesn't have one).
-4. Changed SSID to "ESP32-CAM-AP" and password to "12345678".
-5. Clicked the green Play button — boom, Serial Monitor showed the output you pasted!
-6. In Wokwi, "connected" to the fake WiFi (right side) and visited http://192.168.4.1 in the pretend browser — web server page loaded with a hello message.
-7. Took screenshots (Serial output, WiFi connect, web page).
-8. Downloaded the GitHub template ZIP, edited README.md with my story, and uploaded to my own GitHub repo.
-
-## Problems and Solutions
-
-Problem: Wokwi doesn't have a real "ESP32-CAM" part or camera — the code had camera stuff that crashed.  
-Solution: I cut out the camera init lines (like #include "esp_camera.h" and camera_config_t) and just kept the WiFi AP + web server. Works perfect in sim! (Real hardware would need FTDI wires, but sim skips that.)
-
-Problem: No WiFi Router part showed up at first in Wokwi.  
-Solution: Used the direct link https://wokwi.com/projects/new/esp32?template=wifi-router — it added one automatically. Set SSID to match my fake one.
-
-Problem: Web page didn't load right away.  
-Solution: Restarted the sim (red Stop button > green Play). Wokwi sometimes needs a coffee break. 😄
-
-### Example Problem (from template)
-Problem: Arduino code will not load on ESP32 Cam.  
-Solution: (Didn't happen to me in sim, but guide says install CH341SER driver for real USB: https://www.wch-ic.com/downloads/CH341SER_ZIP.html)
-
-## Final Report
-
-This project was awesome — like giving my ESP32 superpowers to make its own WiFi! In Wokwi, it started the AP in seconds, and connecting showed a simple web page saying "Hello from ESP32!" (I added that). Learned WiFi APs are easy to fake, which is why passwords matter. Total time: 45 minutes. If I had real hardware, I'd add the camera stream next. Score: 10/10 robot points! Ready for class demo — just share my Wokwi link. 🎉
-
-## About
-
----
+1.  **Setup:** Opened Wokwi.com and started a new **MicroPython on ESP32** project.
+2.  **Wiring:** Connected a Red LED to GPIO 2 (D2) and grounded it through a 220Ω resistor.
+3.  **Coding:** Wrote a Python script to simulate WiFi packet arrival. The script randomly generates "dummy packets" and counts how many "Authentication Frames" appear.
+4.  **Testing:** Ran the simulation. The system successfully detected the simulated flood attack and triggered the LED alarm.
 
 ## 🔧 Troubleshooting & Challenges
 
@@ -70,7 +27,6 @@ This project was awesome — like giving my ESP32 superpowers to make its own Wi
 
 ## 📸 Proof of Concept
 ![Simulation Screenshot](image.png)
-A Documentation Template for projects you complete in CSN150 (I filled it with my ESP32 AP story!)
 
 ## 🎥 Video Demonstration
 [Click here to watch the Project Video](CSN-150%20FINAL%20PROJECT.mkv)
