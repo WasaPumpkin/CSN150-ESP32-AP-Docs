@@ -56,4 +56,18 @@ This project was awesome — like giving my ESP32 superpowers to make its own Wi
 
 ## About
 
+---
+
+## 🔧 Troubleshooting & Challenges
+
+### Challenge 1: Compilation Timeouts
+*   **Issue:** Initially attempted to use C++ (Arduino framework), but the free tier of the Wokwi build servers was overloaded, causing "Build Server Busy" errors.
+*   **Solution:** Pivoted to **MicroPython**. Since Python is interpreted directly in the browser, it bypasses the heavy compilation queue, allowing for instant and reliable simulation testing.
+
+### Challenge 2: LED Visibility
+*   **Issue:** The LED blink was initially too fast (50ms) to see clearly in the simulation.
+*   **Solution:** Adjusted the `time.sleep()` duration from `0.05` to `0.5` seconds to make the visual alert distinct and clear in the demonstration video.
+
+## 📸 Proof of Concept
+![Simulation Screenshot](INSERT_YOUR_IMAGE_FILENAME_HERE.png)
 A Documentation Template for projects you complete in CSN150 (I filled it with my ESP32 AP story!)
