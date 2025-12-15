@@ -69,5 +69,5 @@ This project was awesome — like giving my ESP32 superpowers to make its own Wi
 *   **Solution:** Adjusted the `time.sleep()` duration from `0.05` to `0.5` seconds to make the visual alert distinct and clear in the demonstration video.
 
 ## 📸 Proof of Concept
-![Simulation Screenshot](INSERT_YOUR_IMAGE_FILENAME_HERE.png)
+![Simulation Screenshot](https://i.postimg.cc/Bn7n4x7z/image.png)
 A Documentation Template for projects you complete in CSN150 (I filled it with my ESP32 AP story!)
